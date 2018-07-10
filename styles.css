@@ -1,0 +1,44 @@
+
+body {
+	background-color: #262626;
+	line-height: 1.15;
+}
+
+.grid-items {
+	background-color: transparent;
+	border: 1px solid lightblue;
+	color: aliceblue;
+	display: flex;
+	justify-content: center;
+	padding: 0.85rem;
+}
+
+/*for small devices*/
+.wrapper {
+	display: grid;
+	grid-template-rows:100px 250px;
+}
+
+@media only screen and (min-width:768px) {
+	.wrapper {
+		grid-template-columns:1fr 1fr 20px 1fr;
+		grid-template-rows:100px 250px 100px;
+		grid-template-areas:
+		"header header . aside"
+		"section section . aside"
+		"footer footer footer footer"
+	}
+
+	.header {
+		grid-area: header;
+	}
+	.section{
+		grid-area: section;
+	}
+	.aside{
+		grid-area: aside;
+	}
+	.footer{
+		grid-area: footer;
+	}
+}
